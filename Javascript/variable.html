@@ -1,0 +1,22 @@
+#<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="textinput">
+<button id="textchanger">Hit me</button>
+<p id="text">Here are Few Texts.</p>
+<script type="text/javascript">
+	document.getElementById("textchanger").onclick=function() 
+	{	
+		var textentered="";
+		textentered=document.getElementById("textinput").value;
+		document.getElementById("text").innerHTML=textentered;
+		
+	}
+
+
+</script>
+</body>
+</html>

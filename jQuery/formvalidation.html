@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+		
+      body {
+
+                font-family: helvetica, sans-serif;
+                font-size:130%;
+                background-image: url("cynan.jpg");
+
+            }
+
+            input {
+
+                padding: 5px 5px 8px 5px;
+                font-size: 25px;
+                border-radius: 5px;
+                border: 1px solid grey;
+                width:320px;
+
+                }
+            
+            label {
+                
+                position: relative;
+                top:12px;
+                width:150px;
+                float: left;
+                
+            }
+              #login {
+                
+                position: relative;
+                top:200px;
+                width: 550px;
+                margin: 0 auto;
+                
+                
+            }
+            #fightsign{
+            	width: 1000px;
+                margin: 0 auto;
+                text-align: center;
+                position: relative;
+                top: 20px;
+                
+            }
+
+            .spaceelement{
+            	margin-bottom: 10px;
+            }
+            #submit{
+            	width: 80px;
+            	margin-left: 150px;
+            }
+            #wrongdetail{
+            	color: red;
+            }
+             #success{
+            	color: green;
+            	display: none;
+            	padding-bottom: 5px;
+            }
+	</style>
+</head>
+<body>
+<div id="fightsign"><h1>FIGHT CLUB</h1></div>
+<div id="login">
+<div id="wrongdetail"></div>
+<div id="success">You Did It!</div>
+ <label for="Email">Email</label>
+  <input type="text" name="Email" id="Email"placeholder="xyzstring@gmail.com">
+  	<div class="spaceelement"></div>
+   <label for="Ph.No.">Telephone</label>
+  <input type="text" name="Email" placeholder="(+91)-9969xxxxxx" id="phone">
+  	<div class="spaceelement"></div>
+   <label for="Password">Password</label>
+  <input type="Password" name="Password" id="pass">
+  	<div class="spaceelement"></div>
+  <input type="submit" name="submit" value="log-in" id="submit">
+  
+
+ </div>
+ <script type="text/javascript">
+
+ 	function IsEmail(email) {
+  		var regex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+ 	 	return regex.test( email );
+	}	
+ 	$("#submit").click(function () {
+
+ 		var errormessage="";
+ 		var fieldmissing="";
+ 		if($("#Email").val()=="")
+ 		{
+ 			fieldmissing+="<br>Email";
+ 		}
+ 		if($("#phone").val()=="")
+ 		{
+ 			fieldmissing+="<br>Telephone";
+ 		}
+ 		if($("#pass").val()=="")
+ 		{
+ 			fieldmissing+="<br>Password";
+ 		}
+ 		if(fieldmissing!=""){
+ 			errormessage+="<p>Following Fields are missing:</p>"+fieldmissing;
+
+ 		}
+ 		if(IsEmail($("#Email").val())==false){
+
+ 			errormessage+="<p>Sorry Wrong Email</p>";
+
+ 		}
+ 		if($.isNumeric($("#phone").val())==false){
+ 			errormessage+="<p>Sorry Wrong Phone Number</p>";
+ 		}
+ 		if(errormessage!="")
+ 		{
+
+ 		$("#wrongdetail").html(errormessage);
+ 		}else{
+ 			$("#success").show();
+ 			$("#wrongdetail").hide();
+ 		}
+
+
+ 		
+ 	});
+ </script>
+</body>
+</html>

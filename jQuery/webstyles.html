@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+		#circle{
+			float: left;
+			width: 250px;
+			height:250px;
+			border-radius: 50%;
+			margin-right: 80px;
+			background-color: red;
+		}
+		.square{
+			float: left;
+			width: 250px;
+			height:250px;
+			margin-right: 80px;
+			background-color: red;
+		}
+		.square{
+			float: left;
+			width: 250px;
+			height:250px;
+			margin-right: 80px;
+			background-color: red;
+		}
+		.clear{
+			clear: both;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="circle"></div>
+	<div class="square"></div>
+	<div class="square"></div>
+	<div class="clear"></div>
+	<p id="text">Hey There Click below</p>
+	<button id="toggle">Hit me</button>
+	<script type="text/javascript">
+			//$("#circle" ).click(function(){
+			//		$("#circle").css("display","none");
+			//		alert($("body").css("width"));
+			//});
+			//$("div").click(function(){
+
+				//$(this).css("display","none");
+			//	$(this).fadeOut("slow",function(){
+					//alert("fadeOut completed");
+			//	});
+			//});
+			//$("#press").click(function(){
+				//$("#content").fadeOut();
+
+			//});
+			$("#toggle").click(function(){
+				if($("#text").css("display")=="none")
+				{
+					$("#text").fadeIn();
+				}
+				else
+				{
+					$("#text").fadeOut();
+				}
+			});
+
+	</script>
+</body>
+</html>

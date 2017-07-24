@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Learn To Code</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	 <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+	<script src="jquery-ui/jquery-ui.js"></script>
+	<style type="text/css">
+	#topbar{
+		width: 100%;
+		background-color: #4285F4;
+		height: 40px;
+	}
+	#logo{
+		float: left;
+		font-weight: bold;
+		font-size: 25px;
+		padding: 5px;
+
+	}
+	body{
+		margin:0 ;
+		padding: 0;
+		font-family: helvetica,sans-serif;
+	}
+	.togglebuttons{
+		float: left;
+		font-size: 90%;
+		padding: 6px;
+		border:0.5px solid grey;
+	}	
+	#buttons{
+		width: 280px;
+		margin: 0 auto;
+		padding: 4px;
+	}
+	#html{
+			border-top-left-radius: 4px;
+			border-bottom-left-radius: 4px; 	
+	}	
+	
+	#output{
+			border-top-right-radius: 4px;
+			border-bottom-right-radius: 4px; 	
+	}
+	.highlighted{
+		background-color:grey;
+	}
+	#htmlpannel{
+		background-image: url("blue1.png");
+		
+	}
+	#csspannel{
+		background-image: url("blue1.png");
+	}
+	#javascriptpannel{
+		background-image: url("blue1.png");
+	}
+	textarea{
+		width: 50%;
+		resize: none;
+		border-top: none;
+	}
+	.pannel{
+		float: left;
+	}
+	
+	iframe{
+		border:none;
+	}
+	.hidden{
+		display: none;
+	}
+	</style>
+	
+</head>
+<body>
+<div id="topbar">
+	<div id="logo">
+		Learn2Code
+	</div>
+	<div id="buttons">
+		<div id="html" class="togglebuttons">HTML</div>
+		<div id="css" class="togglebuttons">CSS</div>
+		<div id="javascript" class="togglebuttons">JAVASCRIPT</div>
+		<div id="output" class="togglebuttons">OUTPUT</div>
+	</div>
+
+</div>
+<div id="container">
+	<textarea id="htmlpannel" class="pannel ">Currently you are on the HTML section, toggle through the respective sections accordingly ,on your rightmost is the output Section.Now Delete the texts that you are seeing on your Screen and HAPPY CODING!</textarea>
+	<textarea id="csspannel" class="pannel hidden"></textarea>
+	<textarea id="javascriptpannel" class="pannel hidden"></textarea>
+	<iframe id="outputpannel" class="pannel "></iframe>
+
+</div>
+	<script type="text/javascript">
+		$(".togglebuttons").hover(function(){
+			$(this).addClass("highlighted");
+		},function(){
+			$(this).removeClass("highlighted");
+		});
+		$(".pannel").height($(window).height()-$("#topbar").height()-10);
+		$(".pannel").width($(window).width()/2-8);
+		$("iframe").contents().find("html").html($("#htmlpannel").val());
+		$("textarea").on("change keyup paste", function() {
+			$("iframe").contents().find("html").html("<html><head><style type='text/css'>"+$("#csspannel").val()+"</style></head><body>"+$("#htmlpannel").val()+"</body></html>");
+    	    });
+		document.getElementById("outputpannel").contentWindow.eval($("#javascriptpannel").val());
+		$(".togglebuttons").click(function(){
+			var pannelId=$(this).attr("id")+"pannel";
+			$("#"+pannelId).toggleClass("hidden");
+			var numberofactive=4-$(".hidden").length;
+			$(".pannel").width(($(window).width()/numberofactive)-8);
+		})
+	</script>
+</body>
+</html>

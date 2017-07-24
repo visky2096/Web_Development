@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+
+	</title>
+</head>
+<body>
+	<p>What is the magic word</p>
+	<p><input type="password" id="magicword"></p>
+	<p><button id="check">Enter</button></p>
+	<script type="text/javascript">
+
+		var magicalword="visky2096";
+		document.getElementById("check").onclick=function()
+		{
+			if(document.getElementById("magicword").value==magicalword)
+			{
+				alert("Access Confirmed");
+				document.getElementById("magicword").value="";
+			}
+			else
+			{
+				alert("Enter the Correct Word");
+			}
+		}
+		
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+		#circle{
+			float: left;
+			width: 250px;
+			height:250px;
+			border-radius: 50%;
+			margin-right: 80px;
+			background-color: red;
+		}
+		</style>
+</head>
+<body>
+	<div id="circle"></div>		
+	<script type="text/javascript">
+		$("#circle").click(function() {
+			$(this).animate({
+			backgroundColor:"green",
+				height:"300px",
+				width:"400px"
+			},2000,function(){
+				$(this).css("background-color","green");
+			});
+		});
+		//$.ajax("info.txt").done(function(data){
+			//$("p").html(data);
+		//}).fail(function(){
+			//$("p").html("Server down");
+		//})
+	</script>
+</body>
+</html>

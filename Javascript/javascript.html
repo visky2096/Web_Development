@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+<p id="text">Hello World</p>
+<button id="button1">Change the text</button>
+<p id="secondtext">Javascript is.....</p>
+<button id="button2">Change the text</button>
+<p id="thirdtext"></p>
+<button id="button3">Change the text</button>
+<p id="fourthtext">The text will fade</p>
+<button id="button4">Change the text</button>
+<script type="text/javascript">
+	document.getElementById("button1").onclick=function()
+	{
+		//alert("button-clicked");
+		document.getElementById("text").innerHTML="Hello Vishal";
+	}
+	document.getElementById("button2").onclick=function()
+	{
+		//alert("button-clicked");
+		document.getElementById("secondtext").innerHTML=document.getElementById("secondtext").innerHTML+"awesome";
+	}
+	document.getElementById("button3").onclick=function()
+	{
+		//alert("button-clicked");
+		document.getElementById("thirdtext").innerHTML="<h1>Hello Vishal</h1>";
+	}
+	document.getElementById("button4").onclick=function()
+	{
+		document.getElementById("fourthtext").style.opacity="0.5";
+	}
+
+</script>
+</body>
+</html>

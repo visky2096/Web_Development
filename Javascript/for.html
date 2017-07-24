@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id ="tweetdiv"></div>
+<script type="text/javascript">
+	var tweetvar="";
+	var tweetarray=["Hi Everyone!","I love Breakfast","Outside is Sunny","Go!"];
+		for(var i=0;i<tweetarray.length;i++)
+		{
+			tweetvar=tweetvar+"<p>"+tweetarray[i]+"</p>";
+		}
+		document.getElementById("tweetdiv").innerHTML=tweetvar;
+</script>
+</body>
+</html>

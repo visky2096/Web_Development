@@ -1,0 +1,62 @@
+#shape{
+			height: 250px;
+			display: none;
+			position: relative;
+		}
+		#topmost{
+			height: 200px;
+			width: 1100px;
+			margin: 0 auto;
+			
+		}
+		#Instructions{
+			float: left;
+			font-weight: bold;
+			background-color:#E86441;
+			height:150px;
+			width: 250px;
+			padding: 10px;
+			border-radius: 18%;
+			margin: 10px;
+
+		}
+		#titleshapes{
+			float: left;
+			font-weight: bold;
+			background-color:#4285F4;
+			height:150px;
+			width: 250px;
+			border-radius: 18%;
+			margin: 10px 10px 10px 130px;
+			padding: 10px;
+			text-align: center;
+		}
+		#bestscore{
+
+				float: right;
+			font-weight: bold;
+			background-color:#F108FC;
+			height:150px;
+			width: 250px;
+			border-radius: 18%;
+			margin: 10px;
+			padding: 10px;
+			text-align: center;
+
+		}
+		#mainsection{
+			height: 400px;
+			width: 1100px;
+			margin:0 auto;
+		}
+		body
+		{
+			margin: 0;
+			padding: 0;
+			font-family: Helvetica,Arial,sans serif;
+			background-image: url("white.jpg");
+			
+		}
+		.clear{
+			clear: both;
+		}
